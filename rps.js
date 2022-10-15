@@ -1,12 +1,16 @@
 
 const choices = ['rock', 'paper', 'scissors'];      //global variable intialize 
 
+
+
 // Func that returns computer's choice
 function getComputerChoice() {
 
     let random = Math.floor(Math.random() * choices.length);
     return choices[random]
 }
+
+
 
 // Func to play one round, taking in player and AI selection as arguments
 function playRound(playerSelection, computerSelection) {
@@ -40,10 +44,15 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+
+
 // Func to capitalize the first letter in string
 function title(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+
+
 
 // Func to run actual game by calling playRound 5 times while keeping score
 function game() {
@@ -59,7 +68,7 @@ function game() {
 
          let result = playRound(playerSelection, computerSelection);
 
-         if (result === 'win') {
+         if (result === 'win') {                                                            // Update win counters based on result of playRound()
             playerWins++; 
          } else if (result === 'lose') {
             computerWins++;
@@ -67,10 +76,10 @@ function game() {
             continue;
          }
 
-         console.log(`Player 1: ${playerWins}         Computer: ${computerWins}`)
+         console.log(`Player 1: ${playerWins}         Computer: ${computerWins}`)           // print scoreboard at end of each round
     }
 
-    if (playerWins > computerWins) {
+    if (playerWins > computerWins) {                                                        // Print if player wins, loses, or ties against computer at end of 5 rounds
         console.log(`You WIN!!! Computer LOSES! `)
     } else if (playerWins < computerWins) {
         console.log(`You LOSE ! Computer WINS !!!`)
