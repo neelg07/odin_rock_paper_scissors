@@ -1,8 +1,9 @@
 
+const choices = ['rock', 'paper', 'scissors'];      //global variable intialize 
+
 // Func that returns computer's choice
 function getComputerChoice() {
 
-    const choices = ['rock', 'paper', 'scissors'];
     let random = Math.floor(Math.random() * choices.length);
     return choices[random]
 }
@@ -10,6 +11,11 @@ function getComputerChoice() {
 // Func to play one round, taking in player and AI selection as arguments
 function playRound(playerSelection, computerSelection) {
     
+    if (!(choices.includes(playerSelection))) {
+        console.log('You inputted something wrong! Computer wins this round!');
+        return 'lose';
+    }
+
     if (playerSelection === computerSelection) {                                                // Condition if tie game
         console.log(`It's a tie! Both players selected ${title(playerSelection)}!`);
         return 'tie';
@@ -47,14 +53,9 @@ function game() {
 
     for (let i = 0; i < 5; i++) {
 
-        let computerSelection = getComputerChoice();        // Store computer's selection in variable
-        let playerChoice = null;
+        let computerSelection = getComputerChoice();                                            // Store computer's selection in variable
+        let playerSelection = prompt('Select One: Rock, Paper, Scissors').toLowerCase()         // Store player's selection in variable
 
-        do {
-
-            let playerChoice = prompt('Select One: Rock, Paper, Scissors')                      // Continue prompt until player makes a valid input (case-insensitively)
-     
-         } while (playerChoice !== 'rock' || playerChoice !== 'paper' || playerChoice !== 'scissors');
 
          let result = playRound(playerSelection, computerSelection);
 
@@ -70,9 +71,9 @@ function game() {
     }
 
     if (playerWins > computerWins) {
-        console.log(`You WIN!!!!`)
+        console.log(`You WIN!!! Computer LOSES! `)
     } else if (playerWins < computerWins) {
-        console.log(`You LOSE !`)
+        console.log(`You LOSE ! Computer WINS !!!`)
     } else {
         console.log('Tie Game !!')
     }
