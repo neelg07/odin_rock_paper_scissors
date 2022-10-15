@@ -73,6 +73,7 @@ function game() {
          } else if (result === 'lose') {
             computerWins++;
          } else {
+            console.log(`Player 1: ${playerWins}         Computer: ${computerWins}`)
             continue;
          }
 
