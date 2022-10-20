@@ -15,33 +15,35 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     
     if (!(choices.includes(playerSelection))) {
-        console.log('You inputted something wrong! Computer wins this round!');
+        results.textContent = 'You inputted something wrong! Computer wins this round!';
         return 'lose';
     }
 
     if (playerSelection === computerSelection) {                                                // Condition if tie game
-        console.log(`It's a tie! Both players selected ${title(playerSelection)}!`);
+        results.textContent = `It's a tie! Both players selected ${title(playerSelection)}!`;
         return 'tie';
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {                   // Conditions if player loses to computer
-        console.log(`You Lose! ${title(computerSelection)} beats ${title(playerSelection)}!`);
+        results.textContent = `You Lose! ${title(computerSelection)} beats ${title(playerSelection)}!`;
         return 'lose';
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        console.log(`You Lose! ${title(computerSelection)} beats ${title(playerSelection)}!`);
+        results.textContent = `You Lose! ${title(computerSelection)} beats ${title(playerSelection)}!`;
         return 'lose';
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        console.log(`You Lose! ${title(computerSelection)} beats ${title(playerSelection)}!`);
+        results.textContent = `You Lose! ${title(computerSelection)} beats ${title(playerSelection)}!`;
         return 'lose';
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {                // Conditions if player wins against computer
-        console.log(`You Win! ${title(playerSelection)} beats ${title(computerSelection)}!`);
+        results.textContent = `You Win! ${title(playerSelection)} beats ${title(computerSelection)}!`;
         return 'win';
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        console.log(`You Win! ${title(playerSelection)} beats ${title(computerSelection)}!`);
+        results.textContent = `You Win! ${title(playerSelection)} beats ${title(computerSelection)}!`;
         return 'win';
     } else {
-        console.log(`You Win! ${title(playerSelection)} beats ${title(computerSelection)}!`);
+        results.textContent = `You Win! ${title(playerSelection)} beats ${title(computerSelection)}!`;
         return 'win';
     }
 }
+
+const results = document.querySelector('#results');
 
 // Player selection using button UI
 const rock = document.querySelector('#rock');
