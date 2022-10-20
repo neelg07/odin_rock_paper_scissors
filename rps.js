@@ -43,6 +43,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+const body = document.querySelector('body');
 const results = document.querySelector('#results');
 const playerScore = document.querySelector('#playerScore');
 const compScore = document.querySelector('#compScore');
@@ -51,7 +52,7 @@ let playerWins = 0;
 let computerWins = 0;
 
 // Player selection using button UI
-const rock = document.querySelector('#rock');
+const rock = document.querySelector('#rock');                               // Click rock button
 rock.addEventListener('click', () => {
     
     let computerSelection = getComputerChoice();
@@ -69,10 +70,12 @@ rock.addEventListener('click', () => {
         compScore.textContent = `Computer Score: ${computerWins}`;
     }
 
+    checkWinner();
+
 });
 
 
-const paper = document.querySelector('#paper');
+const paper = document.querySelector('#paper');                             // Click paper button
 paper.addEventListener('click', () => {
 
     let computerSelection = getComputerChoice();
@@ -90,10 +93,12 @@ paper.addEventListener('click', () => {
         compScore.textContent = `Computer Score: ${computerWins}`;
     }
 
+    checkWinner();
+
 });
 
 
-const scissors = document.querySelector('#scissors');
+const scissors = document.querySelector('#scissors');                       //  click scissors button
 scissors.addEventListener('click', () => {
 
     let computerSelection = getComputerChoice();
@@ -111,7 +116,31 @@ scissors.addEventListener('click', () => {
         compScore.textContent = `Computer Score: ${computerWins}`;
     }
 
+    checkwinner();
+
 });
+
+
+// Checks for winner after each round i.e. first to 5 wins
+function checkWinner() {
+
+    const final = document.createElement('h2');
+    const playAgain = document.createElement('button');
+    playAgain.textContent = "Play Again"
+
+    if (playerWins === 5) {
+        final.textContent = `CONGRATULATIONS!! YOU WON AGAINST CPU!! Play Again?`;
+        body.appendChild(final);
+        body.appendChild(playAgain);
+    }
+
+    if (computerWins === 5) {
+        final.textContent = `Sorry! You lost against CPU! Play Again?`;
+        body.appendChild(final);
+        body.appendChild(playAgain);
+    }
+}
+
 
 
 
@@ -124,12 +153,12 @@ function title(string) {
 
 
 // Func to run actual game by calling playRound 5 times while keeping score
-function game() {
+/* function game() {
 
     let playerWins = 0;                 // Counter for each player's wins
     let computerWins = 0; 
 
-   /* for (let i = 0; i < 5; i++) {
+   for (let i = 0; i < 5; i++) {
 
         let computerSelection = getComputerChoice();                                            // Store computer's selection in variable
         let playerSelection = prompt('Select One: Rock, Paper, Scissors').toLowerCase()         // Store player's selection in variable
@@ -155,6 +184,6 @@ function game() {
         console.log(`You LOSE ! Computer WINS !!!`)
     } else {
         console.log('Tie Game !!')
-    } */
-}
+    }
+} */
 
