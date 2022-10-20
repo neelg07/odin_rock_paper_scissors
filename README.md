@@ -14,3 +14,10 @@ Simple implementation of classic "rock-paper-scissors" using JavaScript programm
 - Functions and JavaScript logic were not difficult at all.
 - Overall, did not take long at all, was fun to make, with nothing I haven't seen before in terms of programming.
 - Helped with getting used to JavaScript fundamentals and syntax.
+
+### Part 2 | UI Implementation
+
+- Revisiting original project to create a UI for players to play with more than just the console.
+- Learning how the fundamentals of Git branching and merging is extremely helpful here and for the future.
+- UI functionality will include simple button layout that will cascade into a response to facilitate gameplay while displaying results outside of just the console. 
+- This part will be a basic UI but we will revisit to make the UI more aesthetically pleasing.
