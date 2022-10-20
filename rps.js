@@ -132,12 +132,22 @@ function checkWinner() {
         final.textContent = `CONGRATULATIONS!! YOU WON AGAINST CPU!! Play Again?`;
         body.appendChild(final);
         body.appendChild(playAgain);
+
+        document.getElementById("rock").disabled = true;
+        document.getElementById("paper").disabled = true;
+        document.getElementById("scissors").disabled = true;
+
     }
 
     if (computerWins === 5) {
         final.textContent = `Sorry! You lost against CPU! Play Again?`;
         body.appendChild(final);
         body.appendChild(playAgain);
+
+        document.getElementById("rock").disabled = true;
+        document.getElementById("paper").disabled = true;
+        document.getElementById("scissors").disabled = true;
+
     }
 }
 
