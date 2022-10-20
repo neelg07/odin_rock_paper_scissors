@@ -11,7 +11,6 @@ function getComputerChoice() {
 }
 
 
-
 // Func to play one round, taking in player and AI selection as arguments
 function playRound(playerSelection, computerSelection) {
     
@@ -44,6 +43,27 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// Player selection using button UI
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', () => {
+    let computerSelection = getComputerChoice();
+    console.log(playRound('rock', computerSelection));
+});
+
+
+const paper = document.querySelector('#paper');
+paper.addEventListener('click', () => {
+    let computerSelection = getComputerChoice();
+    console.log(playRound('paper', computerSelection));
+});
+
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', () => {
+    let computerSelection = getComputerChoice();
+    console.log(playRound('scissors', computerSelection));
+});
+
 
 
 // Func to capitalize the first letter in string
@@ -60,7 +80,7 @@ function game() {
     let playerWins = 0;                 // Counter for each player's wins
     let computerWins = 0; 
 
-    for (let i = 0; i < 5; i++) {
+   /* for (let i = 0; i < 5; i++) {
 
         let computerSelection = getComputerChoice();                                            // Store computer's selection in variable
         let playerSelection = prompt('Select One: Rock, Paper, Scissors').toLowerCase()         // Store player's selection in variable
@@ -75,7 +95,7 @@ function game() {
          } else {
             console.log(`Player 1: ${playerWins}         Computer: ${computerWins}`)
             continue;
-         }
+         } 
 
          console.log(`Player 1: ${playerWins}         Computer: ${computerWins}`)           // print scoreboard at end of each round
     }
@@ -86,6 +106,6 @@ function game() {
         console.log(`You LOSE ! Computer WINS !!!`)
     } else {
         console.log('Tie Game !!')
-    }
+    } */
 }
 
