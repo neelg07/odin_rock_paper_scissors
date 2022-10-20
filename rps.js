@@ -44,26 +44,73 @@ function playRound(playerSelection, computerSelection) {
 }
 
 const results = document.querySelector('#results');
+const playerScore = document.querySelector('#playerScore');
+const compScore = document.querySelector('#compScore');
+
+let playerWins = 0;
+let computerWins = 0;
 
 // Player selection using button UI
 const rock = document.querySelector('#rock');
 rock.addEventListener('click', () => {
+    
     let computerSelection = getComputerChoice();
-    console.log(playRound('rock', computerSelection));
+
+    if (playRound('rock', computerSelection) === 'win') {
+        playerWins++; 
+        playerScore.textContent = `Player Score: ${playerWins}`;
+        compScore.textContent = `Computer Score: ${computerWins}`;
+    } else if (playRound('rock', computerSelection) === 'lose') {
+        computerWins++;
+        playerScore.textContent = `Player Score: ${playerWins}`;
+        compScore.textContent = `Computer Score: ${computerWins}`;
+    } else {
+        playerScore.textContent = `Player Score: ${playerWins}`;
+        compScore.textContent = `Computer Score: ${computerWins}`;
+    }
+
 });
 
 
 const paper = document.querySelector('#paper');
 paper.addEventListener('click', () => {
+
     let computerSelection = getComputerChoice();
-    console.log(playRound('paper', computerSelection));
+
+    if (playRound('paper', computerSelection) === 'win') {
+        playerWins++; 
+        playerScore.textContent = `Player Score: ${playerWins}`;
+        compScore.textContent = `Computer Score: ${computerWins}`;
+    } else if (playRound('paper', computerSelection) === 'lose') {
+        computerWins++;
+        playerScore.textContent = `Player Score: ${playerWins}`;
+        compScore.textContent = `Computer Score: ${computerWins}`;
+    } else {
+        playerScore.textContent = `Player Score: ${playerWins}`;
+        compScore.textContent = `Computer Score: ${computerWins}`;
+    }
+
 });
 
 
 const scissors = document.querySelector('#scissors');
 scissors.addEventListener('click', () => {
+
     let computerSelection = getComputerChoice();
-    console.log(playRound('scissors', computerSelection));
+
+    if (playRound('scissors', computerSelection) === 'win') {
+        playerWins++; 
+        playerScore.textContent = `Player Score: ${playerWins}`;
+        compScore.textContent = `Computer Score: ${computerWins}`;
+    } else if (playRound('scissors', computerSelection) === 'lose') {
+        computerWins++;
+        playerScore.textContent = `Player Score: ${playerWins}`;
+        compScore.textContent = `Computer Score: ${computerWins}`;
+    } else {
+        playerScore.textContent = `Player Score: ${playerWins}`;
+        compScore.textContent = `Computer Score: ${computerWins}`;
+    }
+
 });
 
 
