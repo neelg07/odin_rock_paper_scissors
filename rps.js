@@ -121,12 +121,18 @@ scissors.addEventListener('click', () => {
 });
 
 
+// Play again button
+const playAgain = document.createElement('button');
+playAgain.textContent = "Play Again"
+
+playAgain.addEventListener('click', () => {
+    location.reload();
+})
+
 // Checks for winner after each round i.e. first to 5 wins
 function checkWinner() {
 
     const final = document.createElement('h2');
-    const playAgain = document.createElement('button');
-    playAgain.textContent = "Play Again"
 
     if (playerWins === 5) {
         final.textContent = `CONGRATULATIONS!! YOU WON AGAINST CPU!! Play Again?`;
