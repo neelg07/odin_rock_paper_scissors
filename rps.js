@@ -116,7 +116,7 @@ scissors.addEventListener('click', () => {
         compScore.textContent = `Computer Score: ${computerWins}`;
     }
 
-    checkwinner();
+    checkWinner();
 
 });
 
